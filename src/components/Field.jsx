@@ -17,7 +17,7 @@ export const Field = ({ field,setIsDraw, setCurrentPlayer, setIsGameEnded ,isGam
     function content(styles) {
        
     const draw = field.every(el => el !== '')                 
-     if(draw === true) {
+     if(draw === true && isGameEnded === false) {
              setIsDraw(true)
              setIsGameEnded(true)
           

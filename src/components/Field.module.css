@@ -26,53 +26,21 @@
   background-color: #242424c7;
 }
 
-@media (max-width: 390px) {
-  .field {
-    width: 350px;
-    height: 390px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    background-color: bisque;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-  }
-  .zone {
-    width: 106px;
-    height: 120px;
-    background-color: #242424;
-    cursor: pointer;
-    font-size: 90px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    color: white;
-  }
-  .zone:hover {
-    background-color: #242424;
-  }
-}
-
 @media (max-width: 440px) {
   .field {
-    width: 444px;
-    height: 440px;
+    width: 390px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     background-color: bisque;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    border: none;
+    margin-top: 30px;
   }
   .zone {
-    width: 137px;
-    height: 138px;
-
+    width: 120px;
+    height: 125px;
     background-color: #242424;
     cursor: pointer;
     font-size: 90px;

@@ -21,6 +21,7 @@ export const Information = ({setIsGameEnded, setIsDraw,setField,isDraw, setCurre
           result = {result}
           setCurrentPlayer={setCurrentPlayer}
           setField={setField}
+          isGameEnded={isGameEnded}
           />)
     
 }

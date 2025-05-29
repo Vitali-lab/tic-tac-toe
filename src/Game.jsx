@@ -1,6 +1,6 @@
 
 import { GameLayout } from "./GameLayout";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 function Game() {
  

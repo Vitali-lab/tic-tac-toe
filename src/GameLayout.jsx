@@ -7,6 +7,15 @@ export const GameLayout = ({ field, isDraw, setField, isGameEnded, currentPlayer
 
     return(
         <div className={styles.main}>
+            <Information 
+        setField = {setField} 
+        setIsDraw={setIsDraw}
+        setIsGameEnded ={setIsGameEnded} 
+        setCurrentPlayer = {setCurrentPlayer}
+        isDraw={isDraw}
+        isGameEnded={isGameEnded}
+        currentPlayer={currentPlayer}
+         />
         <Field 
         field = {field} 
         currentPlayer={currentPlayer}
@@ -17,15 +26,6 @@ export const GameLayout = ({ field, isDraw, setField, isGameEnded, currentPlayer
         setIsDraw={setIsDraw}
         />
         
-        <Information 
-        setField = {setField} 
-        setIsDraw={setIsDraw}
-        setIsGameEnded ={setIsGameEnded} 
-        setCurrentPlayer = {setCurrentPlayer}
-        isDraw={isDraw}
-        isGameEnded={isGameEnded}
-        currentPlayer={currentPlayer}
-         />
         </div>
     )
 }
