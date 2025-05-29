@@ -49,6 +49,7 @@
     justify-content: center;
     align-items: center;
     border: none;
+    color: white;
   }
   .zone:hover {
     background-color: #242424;
@@ -57,20 +58,21 @@
 
 @media (max-width: 440px) {
   .field {
-    width: 440px;
+    width: 444px;
     height: 440px;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 15px;
     background-color: bisque;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
     border: none;
   }
   .zone {
-    width: 138px;
-    height: 140px;
+    width: 137px;
+    height: 138px;
+
     background-color: #242424;
     cursor: pointer;
     font-size: 90px;
@@ -79,6 +81,7 @@
     justify-content: center;
     align-items: center;
     border: none;
+    color: white;
   }
   .zone:hover {
     background-color: #242424;
