@@ -1,0 +1,25 @@
+.info {
+  text-align: center;
+  font-size: 50px;
+}
+.refresh {
+  height: 50px;
+  width: 250px;
+  font-size: 25px;
+  color: #242424;
+  cursor: pointer;
+}
+
+@media (max-width: 390px) {
+  .info {
+    text-align: center;
+    font-size: 30px;
+  }
+  .refresh {
+    height: 50px;
+    width: 250px;
+    font-size: 25px;
+    color: #242424;
+    cursor: pointer;
+  }
+}
