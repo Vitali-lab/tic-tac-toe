@@ -7,8 +7,9 @@ function Game() {
  const [currentPlayer , setCurrentPlayer] = useState('X')
  const [isGameEnded ,setIsGameEnded ] = useState(false)
  const [isDraw , setIsDraw ] = useState(false)
-
-
+ const [isFirstMenuOpen, setIsFirstMenuOpen] = useState(true)
+ const [userNameX, setUserNameX] = useState('')
+ const [userNameO, setUserNameO] = useState('')
  const [field , setField]= useState([
   '','','',
   '','','',
@@ -26,8 +27,13 @@ function Game() {
     setIsGameEnded={setIsGameEnded}
     currentPlayer={currentPlayer}
     setCurrentPlayer={setCurrentPlayer}
-    setField = { setField }
-    />
+    setField = { setField } 
+    isFirstMenuOpen={isFirstMenuOpen}
+    setIsFirstMenuOpen={setIsFirstMenuOpen}
+    userNameX = {userNameX}
+    userNameO = {userNameO}
+    setUserNameX = {setUserNameX}
+    setUserNameO = {setUserNameO}/>
   )
 }
 

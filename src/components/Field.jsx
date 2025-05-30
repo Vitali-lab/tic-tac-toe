@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { FieldLayout } from './FieldLayout'
 
-export const Field = ({ field,setIsDraw, setCurrentPlayer, setIsGameEnded ,isGameEnded, currentPlayer , setField}) => {
+import { FieldLayout } from './FieldLayout'
+import PropTypes from 'prop-types';
+
+export const Field = ({ field,setIsDraw, setCurrentPlayer, setIsGameEnded ,isGameEnded, currentPlayer , setField, setUserNameX,setUserNameO}) => {
    
-    const [disabled,setDisabled] = useState(false)
  
 
      const WIN_PATTERNS = [
@@ -32,7 +32,7 @@ export const Field = ({ field,setIsDraw, setCurrentPlayer, setIsGameEnded ,isGam
                     newfield[index] = currentPlayer
                     setField(newfield)
                     setCurrentPlayer(prev => prev === 'X'?'O':'X')
-                     
+                    
 
                     for (let i = 0 ; i < WIN_PATTERNS.length; i++ ){
                     const [f,s,t] = WIN_PATTERNS[i]
@@ -51,4 +51,14 @@ export const Field = ({ field,setIsDraw, setCurrentPlayer, setIsGameEnded ,isGam
         <FieldLayout field={field} content = {content} />
     )
 }
+
+Field.propTypes = {
+  field: PropTypes.array,
+  setIsDraw: PropTypes.func,
+  setCurrentPlayer: PropTypes.func,
+  setIsGameEnded: PropTypes.func,
+  setField: PropTypes.func,
+  isGameEnded: PropTypes.bool,
+  currentPlayer: PropTypes.string,
+}; 
 

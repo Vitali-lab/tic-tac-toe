@@ -1,12 +1,22 @@
 import { Field } from './components/Field';
 import { Information } from './components/Information'
+import { FirstMenu } from './components/FirstMenu';
 import  styles  from "./Game.module.css";
 import PropTypes from 'prop-types';
 
-export const GameLayout = ({ field, isDraw, setField, isGameEnded, currentPlayer,setIsDraw,setIsGameEnded, setCurrentPlayer}) =>{
+export const GameLayout = ({ field, isDraw, setField, isGameEnded,setIsFirstMenuOpen, isFirstMenuOpen, currentPlayer,setIsDraw,setIsGameEnded, setCurrentPlayer , userNameX, userNameO , setUserNameX,setUserNameO}) =>{
 
     return(
+      
         <div className={styles.main}>
+           {isFirstMenuOpen && <div className={styles.startGame}>
+                <FirstMenu 
+                setIsFirstMenuOpen={setIsFirstMenuOpen}
+                setUserNameX = {setUserNameX}
+                setUserNameO = {setUserNameO}
+                userNameX = {userNameX}
+                userNameO = {userNameO} />
+            </div>}
             <Information 
         setField = {setField} 
         setIsDraw={setIsDraw}
@@ -15,6 +25,8 @@ export const GameLayout = ({ field, isDraw, setField, isGameEnded, currentPlayer
         isDraw={isDraw}
         isGameEnded={isGameEnded}
         currentPlayer={currentPlayer}
+        userNameX = {userNameX}
+        userNameO = {userNameO}
          />
         <Field 
         field = {field} 
@@ -24,6 +36,8 @@ export const GameLayout = ({ field, isDraw, setField, isGameEnded, currentPlayer
         setField = {setField}
         setIsGameEnded ={setIsGameEnded} 
         setIsDraw={setIsDraw}
+        setUserNameX = {setUserNameX}
+        setUserNameO = {setUserNameO}
         />
         
         </div>
@@ -31,5 +45,18 @@ export const GameLayout = ({ field, isDraw, setField, isGameEnded, currentPlayer
 }
 
 GameLayout.propTypes = {
-  field: PropTypes.string.isRequired
-};
+  field: PropTypes.array,
+  isDraw: PropTypes.bool,
+  isGameEnded: PropTypes.bool,
+  isFirstMenuOpen: PropTypes.bool,
+  currentPlayer: PropTypes.string,
+  setField: PropTypes.func,
+  setIsFirstMenuOpen: PropTypes.func ,
+  setIsDraw: PropTypes.func,
+  setCurrentPlayer: PropTypes.func,
+  userNameX: PropTypes.string,
+  userNameO: PropTypes.string,
+  setUserNameX: PropTypes.func,
+  setUserNameO: PropTypes.func ,
+
+}; 
