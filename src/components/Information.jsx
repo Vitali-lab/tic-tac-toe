@@ -2,11 +2,30 @@
 import PropTypes from 'prop-types';
 import { InformationLayout } from './InformationLayout'
 import { useEffect, useState } from 'react';
+// import { useSelector , useDispatch } from "react-redux";
+import { useRedux } from '../hooks/useRedux';
 
-export const Information = ({setIsGameEnded, setIsDraw,setField,isDraw, setCurrentPlayer, isGameEnded, currentPlayer ,userNameX ,userNameO}) => {
+export const Information = ( ) => {
  const [winsX, setWinsX] = useState(0)
  const [winsO, setWinsO] = useState(0)
  const [draws , setDraws] = useState(0)
+ const [state, dispatch] = useRedux()
+    // const userNameX = useSelector((state)=> state.userNameX)
+    // const userNameO = useSelector((state)=> state.userNameO)
+    // const isDraw = useSelector((state)=> state.isDraw)
+    // const isGameEnded = useSelector((state)=> state.isGameEnded) 
+    // const currentPlayer = useSelector((state)=> state.currentPlayer) 
+
+    const userNameX = state.userNameX
+    const userNameO = state.userNameO
+    const isDraw = state.isDraw
+    const isGameEnded = state.isGameEnded
+    const currentPlayer = state.currentPlayer
+
+
+    
+
+    
 
     const result = () => {
         if (isDraw === true) {
@@ -55,24 +74,17 @@ export const Information = ({setIsGameEnded, setIsDraw,setField,isDraw, setCurre
     },[isGameEnded])
     
     const refresh = () => {
-               setIsDraw(false)
-               setIsGameEnded(false)
-               setField([ '','','','','','','','','',])
-               setCurrentPlayer('X')
+            dispatch({type:'SET_IS_DRAW', payload:false})
+            dispatch({type:'SET_GAME_ENDED', payload:false})
+            dispatch({type:"SET_FIELD",payload:[ '','','','','','','','','',]})
+            dispatch({type:'SET_CURRENT_PLAYER', payload:'X'})
 
             }
 
     return (<InformationLayout 
-          setIsDraw={setIsDraw}
-          setIsGameEnded={setIsGameEnded}
           result = {result}
-          setCurrentPlayer={setCurrentPlayer}
-          setField={setField}
-          isGameEnded={isGameEnded}
           refresh={refresh}
           results={results}
-          userNameX={userNameX}
-          userNameO={userNameO}
           resultTable={resultTable}
           winsX={winsX}
           winsO = {winsO}

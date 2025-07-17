@@ -1,11 +1,15 @@
 
 import PropTypes from "prop-types";
 import styles from "./Information.module.css";
+import { useSelector } from "react-redux";
 
 
+export const  InformationLayout = ({refresh, result,winsX,winsO,draws })=>{
+  
+  const isGameEnded = useSelector((state)=> state.isGameEnded)
+  const userNameX = useSelector((state)=> state.userNameX)
+  const userNameO = useSelector((state)=> state.userNameO)
 
-export const  InformationLayout = ({isGameEnded,refresh, result,userNameX,userNameO,winsX,winsO,draws })=>{
-    
     return(
         <div className={styles.info}>
             <p>{result()}</p>
