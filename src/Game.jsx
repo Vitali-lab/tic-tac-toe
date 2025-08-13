@@ -1,12 +1,25 @@
 
-import { GameLayout } from "./GameLayout";
+import  GameLayout  from "./GameLayout";
+import  React  from 'react'
+
+// function Game() {
+
+//   return (
+//     <GameLayout/>
+//   )
+// }
+
+// export default Game
 
 
-function Game() {
+class Game extends React.Component {
 
-  return (
-    <GameLayout/>
-  )
+
+  render() {
+    return(
+      <GameLayout />
+    )
+  }
 }
 
 export default Game
